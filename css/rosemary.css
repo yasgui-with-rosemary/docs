@@ -1,0 +1,291 @@
+/*
+ * SPDX-FileCopyrightText: 2022 Albert Meroño, Rinke Hoekstra, Carlos Martínez
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/* Adapted from bootstrap's cover.css */
+
+/*
+ * Globals
+ */
+
+ /*
+ * Color palette - Rosemary
+
+D8EFD3
+95D2B3
+55AD9B
+F1F8E8
+
+*/
+
+/* Links */
+a:focus {
+  color: #373737;
+}
+a,a:hover {
+  color: #55AD9B;
+}
+
+.rosemarygreen {
+  color: #55AD9B;
+}
+
+/* Custom default button */
+.btn-default:hover,.bton-default:focus {
+  color: #fff;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #95D2B3;
+  border: 1px solid #fff;
+}
+.btn-default {
+  color: #fff;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #55AD9B;
+  border: 1px solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #F1F8E8;
+}
+body {
+  color: #373737;
+  text-align: center;
+  /* text-shadow: 0 1px 3px rgba(0,0,0,.5); */
+}
+
+
+
+
+/* ul.icon-list {
+  list-style-position: outside;
+  padding-left: 20px;
+}
+
+ul.icon-list li {
+  margin: 10px 0; 
+  padding-left: 35px; 
+  position: relative;
+}
+
+ul.icon-list li::before {
+  content: '';
+  position: absolute;
+  left: 120px;
+  top: 0;
+  width: 25px; 
+  height: 25px;
+  background-image: url('../frying-pan.png');
+  background-size: cover;
+} */
+
+
+
+
+
+/* Remove default bullets */
+ul.icon-list {
+  list-style: none; /* Removes default bullet points */
+  padding-left: 0; /* Removes default padding */
+}
+
+/* Style each list item */
+ul.icon-list li {
+  display: flex; /* Use flexbox to align icon and text */
+  align-items: center; /* Vertically center the icon and text */
+  margin: 10px 0; /* Adds spacing between list items */
+}
+
+/* Icon styling */
+ul.icon-list li::before {
+  content: '';
+  display: inline-block;
+  width: 25px; /* Icon width */
+  height: 25px; /* Icon height */
+  background-image: url('../img/frying-pan.png'); /* Path to your icon */
+  background-size: cover; /* Adjust the icon size */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Paragraphs inside list items */
+ul.icon-list li p {
+  margin: 0; /* Remove default margins to prevent text shift */
+  word-wrap: break-word; /* Ensure long text wraps properly */
+}
+
+/* Style the container that holds the unordered list */
+.icon-list-container {
+  text-align: center; /* Center the list within the div */
+}
+
+/* Center the unordered list itself */
+.icon-list {
+  display: inline-block; /* Make the ul behave like an inline element for centering */
+  text-align: left; /* Ensure the list items are left-aligned */
+  padding-left: 0; /* Remove any additional padding */
+}
+
+
+
+
+
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  /* -webkit-box-shadow: inset 0 0 65px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 65px rgba(0,0,0,.5); */
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+.smaller {
+  font-size: 16px;
+}
+
+
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #373737; /* IE8 proofing */
+  /* color: rgba(255,255,255,.75); */
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #373737;
+  /* border-bottom-color: rgba(255,255,255,.25); */
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #373737;
+  border-bottom-color: #55AD9B;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: #373737; /* IE8 proofing */
+  /* color: rgba(255,255,255,.5); */
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+}
+
+
+/* grlc specific styles */
+
+.circ-number {
+    background-color: #fff;
+    border: 3px solid #55AD9B;
+    width: 40px;
+    line-height: 36px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* Add space between p paragraphs */
+
+.lead {
+  margin-top: 10px;
+}

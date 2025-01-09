@@ -1,0 +1,9 @@
+{
+    "name" : "rosemary",
+    "title" : "p[RO]duction of [S]parql qu[E]ries with [M]inim[A]l expe[R]ience using [Y]asgui",
+    "description" : "rosemary is a plugin for YASGUI (Yet Another SPARQL GUI) which facilitates the creation of SPARQL queries without requiring knowledge of the language",
+    "url" : "http://yasgui-with-rosemary.github.io/docs",
+    "keywords" : "tools, SPARQL, query, Linked Data, LOD",
+    "author" : "Kody Moodley",
+    "repository" : "https://github.com/yasgui-with-rosemary/app"
+}

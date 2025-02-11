@@ -1,0 +1,235 @@
+<!--
+SPDX-FileCopyrightText: 2024 Kody Moodley
+
+SPDX-License-Identifier: MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description"
+    content="rosemary produces SPARQL queries from form inputs without requiring knowledge of SPARQL">
+  <meta name="author" content="Kody Moodley">
+  <link rel="shortcut icon" href="img/favicon.ico">
+
+  <title>rosemary</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/rosemary.css" rel="stylesheet">
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-80202120-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+      <div class="cover-container">
+
+        <div class="inner cover">
+          <div class="inner">
+            <h3 class="masthead-brand"><a href="#">rosemary</a></h3>
+            <nav>
+              <ul class="nav masthead-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="https://github.com/yasgui-with-rosemary/app/" target="_blank">GitHub</a></li>
+                <li class="active"><a href="tutorial.html">Tutorial</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="tutorialcontainer">
+          <p>This short tutorial will guide you through using <a
+              href="https://yasgui-with-rosemary.github.io/app/">Rosemary</a>, a faceted search-style filtering tool for
+            <a href="http://yasgui.triply.cc" target="_blank">Yasgui</a>.</p>
+
+          <div class="row">
+            <h3>Step 1: Access Rosemary</h3>
+            <div class="imgcontainer"><img src="img/step_1_access_rosemary.gif" alt="Yasgui-with-rosemary screenshot"
+                class="img-responsive img-thumbnail" width="500"></div>
+            <p>
+              Navigate to <a href="https://yasgui-with-rosemary.github.io/app/" target="_blank">Yasgui-with-rosemary</a>
+              in your browser (<a href="https://www.google.com/chrome/">Chrome</a> recommended). This is a special
+              version of the <a href="https://www.w3.org/TR/sparql11-query/" target="_blank">SPARQL</a> editor <a
+                href="http://yasgui.triply.cc" target="_blank">Yasgui</a> which comes bundled with <a
+                href="https://github.com/yasgui-with-rosemary/app" target="_blank">Rosemary</a>. Click the Rosemary icon
+              in the top right to open the sidebar, which will slide in from the right.
+            </p>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <h3>Step 2: Enter a Data Source</h3>
+            <div class="imgcontainer"><img src="img/step_2_enter_sparql_url.gif"
+                alt="Rosemary filter panel screenshot" class="img-responsive img-thumbnail" width="500"></div>
+            <p>
+              In the Data Source textbox enter the URL of a Linked Data source (sometimes called a SPARQL endpoint).
+              Ensure that you paste the correct URL here (some SPARQL endpoints are only accessible over <a
+                href="https://en.wikipedia.org/wiki/HTTPS" target="_blank">HTTPS</a> and not HTTP for example). <a
+                href="https://www.wikidata.org/wiki/Wikidata%3ALists/SPARQL_endpoints" target="_blank">Here</a> is a
+              non-exhaustive list of open data sources maintained by <a href="https://www.wikidata.org"
+                target="_blank">Wikidata</a>. Keep in mind that some of these might no longer be accessible or active.
+            </p>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <h3>Step 3: Fill out some filters</h3>
+            <div class="imgcontainer"><img src="img/step_3_fill_out_filters.gif" alt="Filtering Screenshot"
+                class="img-responsive img-thumbnail" width="500"></div>
+            <p>
+              Use filters to refine your search. Rosemary provides four types (examples from <a href="https://www.dbpedia.org/"
+              target="_blank">DBpedia</a>):
+            </p>
+
+            <div>
+              <ul>
+                <li><strong>Entity Types</strong> (e.g., <a href="https://dbpedia.org/ontology/Person"
+                    target="_blank"><em>Person</em></a>, <a href="https://dbpedia.org/ontology/Place"
+                    target="_blank"><em>Place</em></a>, <a href="https://dbpedia.org/ontology/Company"
+                    target="_blank"><em>Company</em></a>)</li>
+
+                <li><strong>Properties</strong> (e.g., the <a href="https://dbpedia.org/ontology/birthPlace"
+                    target="_blank"><em>birth place</em></a> property filters entities by birth location. To find people
+                  born in <a href="https://dbpedia.org/resource/Calcutta" target="_blank"><em>Calcutta</em></a>, use Calcutta as the value which is, itself, an entity in <a href="https://www.dbpedia.org/"
+                  target="_blank">DBpedia</a>).</li>
+
+                <li><strong>Value Range</strong> – Unlike the properties filter, this assumes the property's value is a literal (e.g., a number or date). Specify a min and max value to filter results.  
+                  For example, find people born between 1900 and 1945 by setting <a href="https://dbpedia.org/ontology/birthPlace" target="_blank"><em>birth place</em></a> as the property, 1900-01-01 as the min, and 1945-01-01 as the max. Ensure the correct data type (e.g., Date) is selected.  
+                  </li>
+                    
+                <li><strong>String Match</strong> (e.g., filter by <a href="https://dbpedia.org/property/name"
+                    target="_blank"><em>names</em></a> of persons or <a href="https://dbpedia.org/ontology/abstract"
+                    target="_blank"><em>abstracts</em></a> of books using <a
+                    href="https://en.wikipedia.org/wiki/Regular_expression" target="_blank">regular expressions</a>,
+                  like names starting with a specific letter or abstracts containing specific words or phrases).</li>
+              </ul>
+            </div>
+
+            <p>
+              Filters are optional, but all fields must be filled for them to apply. A 🔍 icon means autocompletion—start typing for suggestions; otherwise, enter values manually.  
+              Example queries are available in the dropdown near the Properties filter. The SPARQL query updates dynamically as you adjust filters; add multiple filter instances using '+' buttons.
+            </p>
+
+            <p>
+              <strong>Display Properties</strong> lets you choose which properties of matched entities to show. For example, if filtering for persons born in Calcutta, you can choose to display their <a href="https://dbpedia.org/ontology/birthDate" target="_blank"><em>birth dates</em></a> and <a href="https://dbpedia.org/ontology/spouse" target="_blank"><em>spouses</em></a>.  
+              <strong>Max # of results</strong> limits the number of returned results.  
+            </p>
+            
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <h3>Step 4: Executing Queries</h3>
+            <div class="imgcontainer"><img src="img/step_4_execute_query.gif" alt="Executing Query Screenshot"
+                class="img-responsive img-thumbnail" width="500"></div>
+            <p>
+              Once you have selected your filters, click on <strong>Run Query</strong>. Yasgui will execute the
+              query on the selected data source and return the results in the pane at the bottom of the page.
+            </p>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <h3 class="imgcontainer">For Developers</h3>
+            <p class="contributor"><strong>Technical assumptions</strong></p>
+
+            <p>Rosemary assumes that:</p>
+            <ul>
+              <li>The names of resources (properties, classes etc.) in the data source you are querying have a string
+                label indicating their human-readable name <strong>and</strong>...</li>
+              <li>This label is indicated by an <a href="https://www.w3.org/TR/rdf-schema/#ch_label"
+                  target="_blank">rdfs:label</a> property <strong>and</strong>...</li>
+              <li>There is an English or "en" <a href="https://www.w3.org/TR/rdf11-concepts/#section-Graph-Literal"
+                  target="_blank">language tag</a> for this label</li>
+            </ul>
+
+            <div class="imgcontainer"><img src="img/rdfs_label.png" alt="rdfs label"
+              class="img-responsive img-thumbnail" width="500"></div>
+
+            <p>
+              If you are unsure what these assumptions mean or whether a particular data source meets these criteria,
+              contact the purveyors of that data source or ask a colleague familiar with Linked Data technologies to
+              verify this for you.
+            </p>
+
+            <p>
+              Rosemary will work better on data sources that assign <em>unique</em> human-readable labels for each
+              resource. If a particular store does not adhere to this, it means distinct resources in the data source
+              share the same human-readable name. Duplicate names will show up in autocompletion results and it will not
+              be possible to distinguish between such resources from the interface.
+            </p>
+
+            <p class="spacing"><strong>Performance issues</strong></p>
+            <p>When searching large data sources (such as DBpedia) for the first time, it is expected that Rosemary can take a while (up to a minute or two for some queries, depending on your internet connection) to generate autocompletion suggestions. This issue will improve with continued usage if your browser has caching enabled. 
+            </p>  
+
+            <div class="imgcontainer"><img src="img/rosemary_loading.gif" alt="loading"
+              class="img-responsive img-thumbnail" width="500"></div>
+
+            <p>We are <a href="https://github.com/yasgui-with-rosemary/app/issues/4" target="_blank">considering ways</a> to improve the user experience by doing upfront pre-calculation of the lists of available properties and types in the Data Source. This would make the initial loading time longer but will make subsequent filtering much quicker.</p>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <h3 class="imgcontainer">You're Ready to Explore!</h3>
+            <p class="spacing">
+              Using <a href="https://github.com/yasgui-with-rosemary/app/" target="_blank">Rosemary</a>, you can
+              construct complex SPARQL queries without writing a single line of code. Try different filters and explore
+              your dataset!
+            </p>
+            <a href="https://yasgui-with-rosemary.github.io/app/" class="btn btn-md btn-block btn-default"
+              target="_blank">Try it Now</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="inner cover">
+        <div class="inner">
+          <p>Adapted from cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a
+              href="https://twitter.com/mdo">@mdo</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

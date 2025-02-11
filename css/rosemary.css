@@ -20,6 +20,30 @@ F1F8E8
 
 */
 
+.spacing {
+  padding: 10px;
+}
+
+.contributor {
+  padding-bottom: 10px;
+}
+
+.othercontainer {
+  padding-bottom: 20px;
+}
+
+.imgcontainer {
+  padding: 20px;
+}
+
+.contactinfocontainer {
+  padding-top: 100px;
+}
+
+.tutorialcontainer {
+  padding-top: 70px;
+}
+
 /* Links */
 a:focus {
   color: #373737;
@@ -100,7 +124,7 @@ ul.icon-list {
 /* Style each list item */
 ul.icon-list li {
   display: flex; /* Use flexbox to align icon and text */
-  align-items: center; /* Vertically center the icon and text */
+  align-items: left; /* Vertically center the icon and text */
   margin: 10px 0; /* Adds spacing between list items */
 }
 
@@ -123,7 +147,7 @@ ul.icon-list li p {
 
 /* Style the container that holds the unordered list */
 .icon-list-container {
-  text-align: center; /* Center the list within the div */
+  text-align: center;
 }
 
 /* Center the unordered list itself */
@@ -131,6 +155,11 @@ ul.icon-list li p {
   display: inline-block; /* Make the ul behave like an inline element for centering */
   text-align: left; /* Ensure the list items are left-aligned */
   padding-left: 0; /* Remove any additional padding */
+}
+
+ul {
+  display: inline-block;
+  text-align: left;
 }
 
 
@@ -288,4 +317,8 @@ ul.icon-list li p {
 
 .lead {
   margin-top: 10px;
+}
+
+.row {
+  text-align: center;
 }

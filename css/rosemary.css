@@ -20,6 +20,20 @@ F1F8E8
 
 */
 
+.assume {
+  display: block;
+  float: left;
+  padding-left: 30px;
+}
+
+h4 {
+  font-size: 12pt;
+}
+
+.tech {
+  padding: 20px;
+}
+
 .spacing {
   padding: 10px;
 }
